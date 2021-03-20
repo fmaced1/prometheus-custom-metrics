@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mighty-fine-fe
+  name: mighty-fine-fe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mighty-fine-fe
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mighty-fine-fe
+    spec:
+      containers:
+      - image: quay.io/brice/metrics-demo:v1-simple-app
+        name: metrics-demo
+        ports:
+            - containerPort: 3000
+        resources: {}
+status: {}
